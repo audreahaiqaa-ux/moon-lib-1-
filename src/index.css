@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    --moon-canvas: #FAF9F6;
+    --moon-paper: #FFFFFF;
+    --moon-surface: #F2F5FA;
+    --moon-ink: #162238;
+    --moon-muted: #4A5A75;
+    --moon-accent: #1D3557;
+    --moon-accent-hover: #2B4C7E;
+    --moon-gingham-a: rgba(120, 154, 198, 0.14);
+    --moon-gingham-b: rgba(120, 154, 198, 0.08);
+    --moon-border: #DDE4EF;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--moon-canvas);
+    color: var(--moon-ink);
+    scroll-behavior: smooth;
+  }
+
+  html[data-text-scale="large"] {
+    font-size: 18px;
+  }
+
+  html[data-high-contrast="true"] {
+    --moon-canvas: #FFFFFF;
+    --moon-paper: #FFFFFF;
+    --moon-surface: #EDF2F7;
+    --moon-ink: #0A0F1A;
+    --moon-muted: #1E293B;
+    --moon-accent: #0F2342;
+    --moon-accent-hover: #1D3557;
+    --moon-border: #64748B;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--moon-canvas);
+    color: var(--moon-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--moon-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Classic accessible Gingham textile weave — crisp cotton check pattern */
+.bg-gingham-soft {
+  background-color: var(--moon-canvas);
+  background-image:
+    linear-gradient(90deg, var(--moon-gingham-a) 50%, transparent 50%),
+    linear-gradient(var(--moon-gingham-a) 50%, transparent 50%);
+  background-size: 32px 32px;
+}
+
+.bg-gingham-fine {
+  background-color: #FFFFFF;
+  background-image:
+    linear-gradient(90deg, var(--moon-gingham-b) 50%, transparent 50%),
+    linear-gradient(var(--moon-gingham-b) 50%, transparent 50%);
+  background-size: 20px 20px;
+}
+
+.bg-gingham-border-ribbon {
+  background-color: #EDF2F8;
+  background-image:
+    linear-gradient(90deg, rgba(29, 53, 87, 0.10) 50%, transparent 50%),
+    linear-gradient(rgba(29, 53, 87, 0.10) 50%, transparent 50%);
+  background-size: 16px 16px;
+}
+
+/* Skip link for screen reader & keyboard accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--moon-accent);
+  color: #FFFFFF;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

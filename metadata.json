@@ -1,0 +1,6 @@
+{
+  "name": "Moon Library",
+  "description": "Perpustakaan digital berbasis web bernuansa gingham yang simpel, aksesibel, dilengkapi pencarian buku intuitif, rekomendasi buku populer, statistik koleksi, serta pusat FAQ dan bantuan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
